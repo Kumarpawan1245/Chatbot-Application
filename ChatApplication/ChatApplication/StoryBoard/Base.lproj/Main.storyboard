@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fl9-JN-XqH">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--User Vc-->
+        <scene sceneID="yS0-Dk-Vfo">
+            <objects>
+                <viewController storyboardIdentifier="UserVc" id="Nwi-sf-xhM" customClass="UserVc" customModule="ChatApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Nl1-0g-bvX">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="whq-Yk-iI2">
+                                <rect key="frame" x="0.0" y="126" width="393" height="692"/>
+                                <color key="backgroundColor" red="0.73725490196078436" green="0.73725490196078436" blue="0.73725490196078436" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6c-zo-rkj">
+                                <rect key="frame" x="343" y="76" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="5i6-w4-trz"/>
+                                    <constraint firstAttribute="height" constant="30" id="zD8-7P-Aat"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
+                                <connections>
+                                    <action selector="addicon:" destination="Nwi-sf-xhM" eventType="touchUpInside" id="FVP-Xj-Any"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat Bot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhg-mF-XNa">
+                                <rect key="frame" x="163" y="80.666666666666671" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="roA-Nq-Pux"/>
+                        <color key="backgroundColor" red="0.27843137254901962" green="0.62745098039215685" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="M6c-zo-rkj" firstAttribute="top" secondItem="roA-Nq-Pux" secondAttribute="top" constant="17" id="3RK-Ak-Ztc"/>
+                            <constraint firstItem="zhg-mF-XNa" firstAttribute="centerY" secondItem="M6c-zo-rkj" secondAttribute="centerY" id="Baw-JG-Ppk"/>
+                            <constraint firstItem="roA-Nq-Pux" firstAttribute="bottom" secondItem="whq-Yk-iI2" secondAttribute="bottom" id="J6I-fc-uio"/>
+                            <constraint firstItem="whq-Yk-iI2" firstAttribute="top" secondItem="M6c-zo-rkj" secondAttribute="bottom" constant="20" id="KPj-Ap-M6Q"/>
+                            <constraint firstItem="zhg-mF-XNa" firstAttribute="centerX" secondItem="Nl1-0g-bvX" secondAttribute="centerX" id="L8c-aP-NRb"/>
+                            <constraint firstItem="whq-Yk-iI2" firstAttribute="leading" secondItem="roA-Nq-Pux" secondAttribute="leading" id="VoY-c3-O1x"/>
+                            <constraint firstItem="roA-Nq-Pux" firstAttribute="trailing" secondItem="M6c-zo-rkj" secondAttribute="trailing" constant="20" id="Xev-OG-3hM"/>
+                            <constraint firstItem="roA-Nq-Pux" firstAttribute="trailing" secondItem="whq-Yk-iI2" secondAttribute="trailing" id="kjK-nM-GGv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yMY-SX-5J4"/>
+                    <connections>
+                        <outlet property="tblView" destination="whq-Yk-iI2" id="NOm-yY-O0b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tVt-wB-VvG" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1870.9923664122136" y="97.183098591549296"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cfG-hh-aEI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="fl9-JN-XqH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5JO-7g-tRc">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Nwi-sf-xhM" kind="relationship" relationship="rootViewController" id="x9Y-7V-Cmn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L1b-ws-92e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.27480916030527" y="97.183098591549296"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+    </resources>
+</document>
