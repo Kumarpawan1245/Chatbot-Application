@@ -8,3 +8,18 @@
 import Foundation
 let alertTitle = "Add Bot"
 let alertMessage = ""
+let  des = "how are you fine"
+let errormsg = "Sorry I don't know !"
+let submit = "Submit"
+let cancelbtn = "Cancel"
+let  nameplaceholder = "Name"
+let concatwithUserName  = "@gmail.com"
+let userpassword = "123456a"
+let erroroccur = "error Occuring"
+let welcome = "Welcome"
+
+//var RecievedMessageCell = "RecievedMessageCell"
+//var SendMessageCell = "SendMessageCell"
+
+
+
