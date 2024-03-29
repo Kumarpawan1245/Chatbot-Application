@@ -19,7 +19,7 @@ class ChatVcViewController: UIViewController {
 
     var userName  = ""
     var data = [String:String]()
-    var replyData = ["Hellow":"How are you?","what about you?": "All good","office?":"Available in office","Working?": "yes","good night":"good night","Fine":"And you","sir come?": "yes","project done?": "Rightnow working","I love India": "I also","what's up": "Nothing special","hyy": "Hellow"]
+    var replyData = ["Hellow":"How are you?","what about you ": "All good","office?":"Available in office","Working?": "yes","good night":"good night","Fine":"And you","sir come?": "yes","project done?": "Rightnow working","I love India": "I also","what's up": "Nothing special","hyy": "Hellow"]
 
     var messages: [DataSnapshot] = []
     
@@ -38,10 +38,10 @@ class ChatVcViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
             if self.messages.count == 0
-                    {
+            {
                 var data1 = ["name":self.userName,"text":welcome]
                 self.sendRandomMessage(withData: data1)
-                    }
+            }
         }
     }
     
@@ -90,7 +90,8 @@ class ChatVcViewController: UIViewController {
          sendtxtMsg.text = ""
     }
     
-    func scrollToBottom(){
+    func scrollToBottom()
+         {
             DispatchQueue.main.async {
                 let indexPath = IndexPath(row:self.messages.count - 1, section:0)
                 self.tblViewChat.scrollToRow(at: indexPath, at: .top, animated: true)

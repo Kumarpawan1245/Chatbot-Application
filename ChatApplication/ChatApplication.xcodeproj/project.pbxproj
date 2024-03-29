@@ -31,6 +31,7 @@
 		92C3C14B2BAC64CC00ABFD09 /* SendMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92C3C1472BAC64CC00ABFD09 /* SendMessageCell.xib */; };
 		92C3C14E2BAC675200ABFD09 /* ChatVcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C3C14D2BAC675200ABFD09 /* ChatVcViewController.swift */; };
 		92C3C1522BAC74B900ABFD09 /* ChatvcExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C3C1512BAC74B900ABFD09 /* ChatvcExtention.swift */; };
+		92CADA6D2BB7020E003DECC9 /* Toaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CADA6C2BB7020E003DECC9 /* Toaster.swift */; };
 		92E7725F2BB2D130001E1788 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92E7725E2BB2D130001E1788 /* GoogleService-Info.plist */; };
 		94CE56BAC6546CAE33DE9FB9 /* Pods_ChatApplication_ChatApplicationUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B91398D2BEE3C0B75505D6 /* Pods_ChatApplication_ChatApplicationUITests.framework */; };
 		CBEC68315A9D500FAF83EF21 /* Pods_ChatApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D72DBA1AFCBBA92A36A328 /* Pods_ChatApplication.framework */; };
@@ -86,6 +87,7 @@
 		92C3C1472BAC64CC00ABFD09 /* SendMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendMessageCell.xib; sourceTree = "<group>"; };
 		92C3C14D2BAC675200ABFD09 /* ChatVcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVcViewController.swift; sourceTree = "<group>"; };
 		92C3C1512BAC74B900ABFD09 /* ChatvcExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatvcExtention.swift; sourceTree = "<group>"; };
+		92CADA6C2BB7020E003DECC9 /* Toaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toaster.swift; sourceTree = "<group>"; };
 		92E7725E2BB2D130001E1788 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A1D90B21744A9AC50FB7FF7B /* Pods-ChatApplicationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApplicationTests.release.xcconfig"; path = "Target Support Files/Pods-ChatApplicationTests/Pods-ChatApplicationTests.release.xcconfig"; sourceTree = "<group>"; };
 		B4B503C036BFD1BA930AF870 /* Pods-ChatApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApplication.debug.xcconfig"; path = "Target Support Files/Pods-ChatApplication/Pods-ChatApplication.debug.xcconfig"; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 			children = (
 				92C3C1382BAC3FF700ABFD09 /* AlertExtention.swift */,
 				92C3C13A2BAC42D300ABFD09 /* Constant.swift */,
+				92CADA6C2BB7020E003DECC9 /* Toaster.swift */,
 			);
 			path = "Utility ";
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				92C3C14E2BAC675200ABFD09 /* ChatVcViewController.swift in Sources */,
 				92C3C1392BAC3FF700ABFD09 /* AlertExtention.swift in Sources */,
 				92C3C1522BAC74B900ABFD09 /* ChatvcExtention.swift in Sources */,
+				92CADA6D2BB7020E003DECC9 /* Toaster.swift in Sources */,
 				92C3C1362BAC3E8C00ABFD09 /* UserVcExcention.swift in Sources */,
 				92C3C1032BAC29A900ABFD09 /* AppDelegate.swift in Sources */,
 				92C3C1342BAC3DE600ABFD09 /* UserModel.swift in Sources */,

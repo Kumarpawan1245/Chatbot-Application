@@ -17,6 +17,8 @@ let concatwithUserName  = "@gmail.com"
 let userpassword = "123456a"
 let erroroccur = "error Occuring"
 let welcome = "Welcome"
+let userExit = "User already exits"
+
 
 //var RecievedMessageCell = "RecievedMessageCell"
 //var SendMessageCell = "SendMessageCell"

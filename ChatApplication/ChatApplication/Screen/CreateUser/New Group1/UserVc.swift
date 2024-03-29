@@ -13,11 +13,9 @@ class UserVc: UIViewController {
     
     @IBOutlet var tblView: UITableView!
     var names: [String] = []
-    var index = 0
     var userName = ""
     var fetchuserName = ""
     var  ref1 = Database.database().reference()
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +27,7 @@ class UserVc: UIViewController {
         ref1.observeSingleEvent(of: .value, with: { snapshot in
          // Check if the snapshot contains any data
             guard snapshot.exists() else {
-                print("No data found")
+                print(erroroccur)
                 return
             }
             // Loop through the children of the snapshot
@@ -69,7 +67,14 @@ class UserVc: UIViewController {
             let addAction = UIAlertAction(title:submit, style: .default) { _ in
                 if let name1 = alertController.textFields?.first?.text, !name1.isEmpty {
                     self.userName = name1
-                    self.names.append(name1)
+                    if self.names.contains(self.userName)
+                    {
+                     self.showToast(message:userExit, font: .systemFont(ofSize: 12.0))
+                    }
+                    else
+                    {
+                     self.names.append(name1)
+                    }
                     self.createUser()
                     self.tblView.reloadData()
                     
@@ -79,9 +84,10 @@ class UserVc: UIViewController {
             alertController.addAction(addAction)
             present(alertController, animated: true, completion: nil)
         }
- 
+
     func createUser()
-     {
+    {
+        
          DataBaseManager.shared.userExists(with:userName ,Completion:{ exist  in
         guard !exist else
         {
