@@ -16,10 +16,9 @@ final class DataBaseManager
 
 extension DataBaseManager
 {
-    public func userExists(with email : String,Completion: @escaping((Bool)->Void))
-
+    public func userExists(with person1 : String,Completion: @escaping((Bool)->Void))
     {
-         database.child(email).observeSingleEvent(of: .value ,with : { DataSnapshot in
+         database.child(person1).observeSingleEvent(of: .value ,with : { DataSnapshot in
             guard DataSnapshot.value as? String != nil else{
                 Completion(false)
                 return
@@ -29,7 +28,7 @@ extension DataBaseManager
     }
 
     public func insertUser(with user : ChatAppUser)
-    {
+     {
         database.child(user.firstName).setValue([
             "firstName" : user.firstName,
             "lastName": user.lastName,

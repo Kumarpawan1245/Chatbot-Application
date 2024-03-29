@@ -1,8 +1,7 @@
-//
 //  ChatVcViewController.swift
 //  ChatApplication
-//
 //  Created by neosoft on 21/03/24.
+
 
 import UIKit
 import FirebaseCore
@@ -17,18 +16,17 @@ class ChatVcViewController: UIViewController {
     @IBOutlet weak var sendbtnTxt: UIButton!
     
     @IBOutlet weak var topMenuLbl: UILabel!
-    
-    
+
     var userName  = ""
     var data = [String:String]()
-    var replyData = ["Hellow":"How are you?","what about you?": "All good","office?":"Available in office","Working?": "yes","good night":"good night","Fine":"And you","sir come?": "yes","project done?": "Rightnow working"]
-    var messages: [DataSnapshot] = []
+    var replyData = ["Hellow":"How are you?","what about you?": "All good","office?":"Available in office","Working?": "yes","good night":"good night","Fine":"And you","sir come?": "yes","project done?": "Rightnow working","I love India": "I also","what's up": "Nothing special","hyy": "Hellow"]
 
+    var messages: [DataSnapshot] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setui()
         configureDatabase()
-//
     }
 
     func configureDatabase() {
@@ -36,8 +34,8 @@ class ChatVcViewController: UIViewController {
                     guard let strongSelf = self else { return }
                     strongSelf.messages.append(snapshot)
                     strongSelf.tblViewChat.insertRows(at: [IndexPath(row: strongSelf.messages.count-1, section: 0)], with: .automatic)
-
                 })
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
             if self.messages.count == 0
                     {
@@ -45,7 +43,6 @@ class ChatVcViewController: UIViewController {
                 self.sendRandomMessage(withData: data1)
                     }
         }
-        
     }
     
     private func setui()
@@ -74,22 +71,22 @@ class ChatVcViewController: UIViewController {
     func sendMessage(withData data: [String: String]) {
          var mdata = data
          DataBaseManager.shared.database.child(userName).child("Messages").childByAutoId().setValue(mdata)
-        if let valueget = replyData[sendtxtMsg.text ?? ""] {
+         if let valueget = replyData[sendtxtMsg.text ?? ""] {
             let  datareply  = ["name":userName,"text":valueget]
                 sendRandomMessage(withData: datareply)
               }
-           else
-           {
+            else
+            {
                let  datareply  = ["name":userName,"text":errormsg]
                sendRandomMessage(withData: datareply)
             }
              sendtxtMsg.text = ""
     }
 
+
     func sendRandomMessage(withData data: [String: String]) {
         var mdata = data
         DataBaseManager.shared.database.child(userName).child("Messages").childByAutoId().setValue(mdata)
-         
          sendtxtMsg.text = ""
     }
     

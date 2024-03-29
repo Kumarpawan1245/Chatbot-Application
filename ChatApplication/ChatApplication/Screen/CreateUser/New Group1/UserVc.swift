@@ -1,41 +1,59 @@
-//
 //  ViewController.swift
 //  ChatApplication
-//
 //  Created by neosoft on 21/03/24.
 
 import UIKit
 import FirebaseAuth
 import Firebase
 import FirebaseStorage
+import FirebaseDatabase
 
 class UserVc: UIViewController {
+    
     
     @IBOutlet var tblView: UITableView!
     var names: [String] = []
     var index = 0
     var userName = ""
-    
+    var fetchuserName = ""
+    var  ref1 = Database.database().reference()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUi()
+        fetchUsernames()
     }
     
+    func fetchUsernames() { // user that already create the node in firebase.
+        ref1.observeSingleEvent(of: .value, with: { snapshot in
+         // Check if the snapshot contains any data
+            guard snapshot.exists() else {
+                print("No data found")
+                return
+            }
+            // Loop through the children of the snapshot
+            for child in snapshot.children {
+                // Check if the child is a DataSnapshot
+                guard let dataSnapshot = child as? DataSnapshot else {
+                    continue
+                }
+                // Access the value of the child and print it (assuming the child represents a username)
+                if let usernamevalue = dataSnapshot.key as? String {
+                    self.names.append(usernamevalue)
+                    print(usernamevalue)
+                    self.tblView.reloadData()
+                }
+            }
+        })
+    }
+
     private func setupUi()
     {
         tblView.delegate = self
         tblView.dataSource = self
         let nib = UINib(nibName: "Usercell", bundle: nil)
         tblView.register(nib, forCellReuseIdentifier: "Usercell")
-    }
-
-    func editDel(name: String) {
-
-    }
-
-    func deleteindex(indexpath: String) {
-
     }
     
     @IBAction func addicon(_ sender: Any) {
@@ -64,14 +82,14 @@ class UserVc: UIViewController {
  
     func createUser()
      {
-        DataBaseManager.shared.userExists(with:userName ,Completion:{ exist  in
+         DataBaseManager.shared.userExists(with:userName ,Completion:{ exist  in
         guard !exist else
         {
             return
         }
             FirebaseAuth.Auth.auth().createUser(withEmail:self.userName + concatwithUserName, password: userpassword, completion: { authresult , error  in
             guard let result = authresult,error == nil else
-           {
+            {
             print(erroroccur)
             return
         }
