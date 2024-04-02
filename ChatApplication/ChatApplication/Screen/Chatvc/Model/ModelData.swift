@@ -14,7 +14,6 @@ struct ChatAppUser
     let emailAdress : String
 }
 
-
 struct ReplyModel {
     let question: String
     let reply: String
@@ -37,7 +36,6 @@ func fetchReplyData() -> [ReplyModel] {
         ReplyModel(question: "hyy", reply: "Hellow"),
         ReplyModel(question: "nyc to meet you", reply: "thansk my pleasure"),
         ReplyModel(question: "good", reply: "thansk my pleasure")
-        
     ]
     return replyData
 }

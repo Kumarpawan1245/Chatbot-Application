@@ -55,6 +55,7 @@ class ChatVcViewController: UIViewController {
         let nib1 = UINib(nibName:"SendMessageCell", bundle: nil)
         tblViewChat.register(nib1, forCellReuseIdentifier:"SendMessageCell")
         topMenuLbl.text = userName
+        changeHomeSafeAreaColor1()
     }
 
     @IBAction func back(_ sender:UIButton)
@@ -104,20 +105,6 @@ class ChatVcViewController: UIViewController {
 }
 
 
-//class Sir
-//{
-//    static let shared = Sir()
-//    private init()
-//    {
-//        
-//    }
-//    func assigent()
-//    {
-//        
-//    }
-//}
-//
-//let obj = Sir.shared.assigent()
 
 
 

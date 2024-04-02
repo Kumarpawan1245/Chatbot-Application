@@ -12,6 +12,7 @@
 		9239597B2BB587CF00F581C1 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239597A2BB587CF00F581C1 /* ModelData.swift */; };
 		924CCCAD2BBBE18A00F455E1 /* Chatviewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924CCCAC2BBBE18A00F455E1 /* Chatviewmodel.swift */; };
 		924CCCAF2BBBE60100F455E1 /* Excention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924CCCAE2BBBE60100F455E1 /* Excention.swift */; };
+		924CCCB12BBC08C900F455E1 /* SafeAreaExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924CCCB02BBC08C900F455E1 /* SafeAreaExtention.swift */; };
 		9298421A2BB30976002CC6CF /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929842192BB30976002CC6CF /* DataBaseManager.swift */; };
 		92C3C1032BAC29A900ABFD09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C3C1022BAC29A900ABFD09 /* AppDelegate.swift */; };
 		92C3C1052BAC29A900ABFD09 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C3C1042BAC29A900ABFD09 /* SceneDelegate.swift */; };
@@ -67,6 +68,7 @@
 		9239597A2BB587CF00F581C1 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		924CCCAC2BBBE18A00F455E1 /* Chatviewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatviewmodel.swift; sourceTree = "<group>"; };
 		924CCCAE2BBBE60100F455E1 /* Excention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Excention.swift; sourceTree = "<group>"; };
+		924CCCB02BBC08C900F455E1 /* SafeAreaExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaExtention.swift; sourceTree = "<group>"; };
 		929842192BB30976002CC6CF /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
 		92C3C0FF2BAC29A900ABFD09 /* ChatApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C3C1022BAC29A900ABFD09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				92C3C13A2BAC42D300ABFD09 /* Constant.swift */,
 				92CADA6C2BB7020E003DECC9 /* Toaster.swift */,
 				924CCCAE2BBBE60100F455E1 /* Excention.swift */,
+				924CCCB02BBC08C900F455E1 /* SafeAreaExtention.swift */,
 			);
 			path = "Utility ";
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				92C3C1422BAC52E700ABFD09 /* Usercell.swift in Sources */,
 				92C3C14A2BAC64CC00ABFD09 /* SendMessageCell.swift in Sources */,
 				92C3C13B2BAC42D300ABFD09 /* Constant.swift in Sources */,
+				924CCCB12BBC08C900F455E1 /* SafeAreaExtention.swift in Sources */,
 				92C3C1482BAC64CC00ABFD09 /* RecievedMessageCell.swift in Sources */,
 				92C3C1072BAC29A900ABFD09 /* UserVc.swift in Sources */,
 				92C3C14E2BAC675200ABFD09 /* ChatVcViewController.swift in Sources */,

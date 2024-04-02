@@ -8,9 +8,8 @@ import Firebase
 import FirebaseStorage
 import FirebaseDatabase
 
-class UserVc: UIViewController {
-    
-    
+class UserVc: UIViewController,DataBaseManagerDelegate {
+
     @IBOutlet var tblView: UITableView!
     var names: [String] = []
     var userName = ""
@@ -22,6 +21,8 @@ class UserVc: UIViewController {
         super.viewDidLoad()
         setupUi()
         fetchUsernames()
+        DataBaseManager.shared.delegate = self
+        
     }
     
     func fetchUsernames() { // user that already create the node in firebase.
@@ -42,6 +43,7 @@ class UserVc: UIViewController {
                     self.viewModel.addUser(name: usernamevalue)
 //                    self.names.append(usernamevalue)
                     print(usernamevalue)
+                    
                     self.tblView.reloadData()
                 }
             }
@@ -54,6 +56,9 @@ class UserVc: UIViewController {
         tblView.dataSource = self
         let nib = UINib(nibName: "Usercell", bundle: nil)
         tblView.register(nib, forCellReuseIdentifier: "Usercell")
+        navigationController?.navigationBar.barTintColor = UIColor.red
+//         changeHomeSafeAreaColor1()
+       
     }
     
     @IBAction func addicon(_ sender: Any) {
@@ -70,11 +75,13 @@ class UserVc: UIViewController {
                 if let name1 = alertController.textFields?.first?.text, !name1.isEmpty {
                     self.userName = name1
                     if self.viewModel.checkUserExistence(name:name1) {
+                                  
                                    self.showToast(message: userExit, font: .systemFont(ofSize: 12.0))
                                 }else {
                                      self.viewModel.addUser(name: name1)
+                                    self.userExistsResult(true)
                                  }
-                    self.createUser()
+//                    tblView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
                     self.tblView.reloadData()
                 }
             }
@@ -83,23 +90,21 @@ class UserVc: UIViewController {
             present(alertController, animated: true, completion: nil)
         }
 
-    func createUser()
-     {
-         DataBaseManager.shared.userExists(with:userName ,Completion:{ exist  in
-        guard !exist else
-        {
-            return
+     func userExistsResult(_ exists: Bool) {
+            if exists {
+                FirebaseAuth.Auth.auth().createUser(withEmail:self.userName + concatwithUserName, password: userpassword, completion: { authresult , error  in
+                guard let result = authresult,error == nil else
+                {
+                print(erroroccur)
+                return
+            }
+            let userDetail = result.user
+            print("\(userDetail)")
+        })
+            } else {
+                self.showToast(message: userExit, font: .systemFont(ofSize: 12.0))
+            }
         }
-            FirebaseAuth.Auth.auth().createUser(withEmail:self.userName + concatwithUserName, password: userpassword, completion: { authresult , error  in
-            guard let result = authresult,error == nil else
-            {
-            print(erroroccur)
-            return
-        }
-        let userDetail = result.user
-        print("\(userDetail)")
-    })
-    })
-    }
+ 
 }
 

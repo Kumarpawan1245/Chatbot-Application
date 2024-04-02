@@ -12,7 +12,7 @@ class NameInputViewModel {
     
     func addUser(name: String) {
         if !names.contains(name) {
-            names.append(name)
+            names.insert(name, at:0)
         }
     }
 
