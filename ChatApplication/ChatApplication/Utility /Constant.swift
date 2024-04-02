@@ -18,6 +18,7 @@ let userpassword = "123456a"
 let erroroccur = "error Occuring"
 let welcome = "Welcome"
 let userExit = "User already exits"
+let subnode = "Messages"
 
 
 //var RecievedMessageCell = "RecievedMessageCell"

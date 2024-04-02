@@ -16,6 +16,7 @@ class UserVc: UIViewController {
     var userName = ""
     var fetchuserName = ""
     var  ref1 = Database.database().reference()
+    let  viewModel = NameInputViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class UserVc: UIViewController {
                 print(erroroccur)
                 return
             }
-            // Loop through the children of the snapshot
+            //Loop through the children of the snapshot
             for child in snapshot.children {
                 // Check if the child is a DataSnapshot
                 guard let dataSnapshot = child as? DataSnapshot else {
@@ -38,7 +39,8 @@ class UserVc: UIViewController {
                 }
                 // Access the value of the child and print it (assuming the child represents a username)
                 if let usernamevalue = dataSnapshot.key as? String {
-                    self.names.append(usernamevalue)
+                    self.viewModel.addUser(name: usernamevalue)
+//                    self.names.append(usernamevalue)
                     print(usernamevalue)
                     self.tblView.reloadData()
                 }
@@ -47,7 +49,7 @@ class UserVc: UIViewController {
     }
 
     private func setupUi()
-    {
+     {
         tblView.delegate = self
         tblView.dataSource = self
         let nib = UINib(nibName: "Usercell", bundle: nil)
@@ -67,17 +69,13 @@ class UserVc: UIViewController {
             let addAction = UIAlertAction(title:submit, style: .default) { _ in
                 if let name1 = alertController.textFields?.first?.text, !name1.isEmpty {
                     self.userName = name1
-                    if self.names.contains(self.userName)
-                    {
-                     self.showToast(message:userExit, font: .systemFont(ofSize: 12.0))
-                    }
-                    else
-                    {
-                     self.names.append(name1)
-                    }
+                    if self.viewModel.checkUserExistence(name:name1) {
+                                   self.showToast(message: userExit, font: .systemFont(ofSize: 12.0))
+                                }else {
+                                     self.viewModel.addUser(name: name1)
+                                 }
                     self.createUser()
                     self.tblView.reloadData()
-                    
                 }
             }
             alertController.addAction(cancelAction)
@@ -86,8 +84,7 @@ class UserVc: UIViewController {
         }
 
     func createUser()
-    {
-        
+     {
          DataBaseManager.shared.userExists(with:userName ,Completion:{ exist  in
         guard !exist else
         {
