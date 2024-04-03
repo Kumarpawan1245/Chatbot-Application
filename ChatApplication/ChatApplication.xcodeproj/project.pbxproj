@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		616D363E42E62A598E1EDC7D /* Pods_ChatApplicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C4B09E93CB28715F04F1691 /* Pods_ChatApplicationTests.framework */; };
+		921AC9A62BBC403B00C6F2EC /* Formatterr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921AC9A52BBC403B00C6F2EC /* Formatterr.swift */; };
 		9238B2CC2BBAF8F40098BAC9 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9238B2CB2BBAF8F40098BAC9 /* UserViewModel.swift */; };
 		9239597B2BB587CF00F581C1 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9239597A2BB587CF00F581C1 /* ModelData.swift */; };
 		924CCCAD2BBBE18A00F455E1 /* Chatviewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924CCCAC2BBBE18A00F455E1 /* Chatviewmodel.swift */; };
@@ -64,6 +65,7 @@
 		552A2A448936AC85014B4676 /* Pods-ChatApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApplication.release.xcconfig"; path = "Target Support Files/Pods-ChatApplication/Pods-ChatApplication.release.xcconfig"; sourceTree = "<group>"; };
 		55B91398D2BEE3C0B75505D6 /* Pods_ChatApplication_ChatApplicationUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApplication_ChatApplicationUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90D4FCE3E0C78C4B2553810F /* Pods-ChatApplicationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApplicationTests.debug.xcconfig"; path = "Target Support Files/Pods-ChatApplicationTests/Pods-ChatApplicationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		921AC9A52BBC403B00C6F2EC /* Formatterr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatterr.swift; sourceTree = "<group>"; };
 		9238B2CB2BBAF8F40098BAC9 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		9239597A2BB587CF00F581C1 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		924CCCAC2BBBE18A00F455E1 /* Chatviewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatviewmodel.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				92CADA6C2BB7020E003DECC9 /* Toaster.swift */,
 				924CCCAE2BBBE60100F455E1 /* Excention.swift */,
 				924CCCB02BBC08C900F455E1 /* SafeAreaExtention.swift */,
+				921AC9A52BBC403B00C6F2EC /* Formatterr.swift */,
 			);
 			path = "Utility ";
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				92C3C1522BAC74B900ABFD09 /* ChatvcExtention.swift in Sources */,
 				92CADA6D2BB7020E003DECC9 /* Toaster.swift in Sources */,
 				92C3C1362BAC3E8C00ABFD09 /* UserVcExcention.swift in Sources */,
+				921AC9A62BBC403B00C6F2EC /* Formatterr.swift in Sources */,
 				92C3C1032BAC29A900ABFD09 /* AppDelegate.swift in Sources */,
 				92C3C1342BAC3DE600ABFD09 /* UserModel.swift in Sources */,
 				92C3C1052BAC29A900ABFD09 /* SceneDelegate.swift in Sources */,

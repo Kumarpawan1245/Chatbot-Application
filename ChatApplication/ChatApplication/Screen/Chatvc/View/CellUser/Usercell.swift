@@ -13,6 +13,7 @@ class Usercell: UITableViewCell {
     @IBOutlet weak var cellview: UIView!
     
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var timeshow: UILabel!
     
     @IBOutlet weak var userMessage: UILabel!
     override func awakeFromNib() {
